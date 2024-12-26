@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text should be visible.
+  </div>
+  <script>
+    // Incorrectly using innerHTML to modify an element that doesn't exist yet
+    document.getElementById('myDiv').innerHTML = "<p>This text will replace the div's content</p>";
+    // This will work, but it's better to wait till the DOM is ready
+    document.getElementById('myDiv').innerHTML = "<p>This will work</p>";
+  </script>
+</body>
+</html>
